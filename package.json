@@ -1,12 +1,12 @@
 {
-  "name": "react-native-sound",
-  "version": "0.10.9",
-  "description": "React Native module for playing sound clips on iOS, Android, and Windows",
+  "name": "react-native-ducking-sound",
+  "version": "0.1.0",
+  "description": "React Native module for playing sound clips of speech",
   "main": "sound.js",
   "typings": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zmxv/react-native-sound.git"
+    "url": "git+https://github.com/EricPKerrr/react-native-ducking-sound.git"
   },
   "keywords": [
     "react-native",
@@ -14,7 +14,7 @@
     "sound",
     "audio"
   ],
-  "author": "Zhen Wang <z@zmxv.com> (http://blog.zmxv.com)",
+  "author": "Eric Kerr",
   "license": "MIT",
   "peerDependencies": {
     "react-native": ">=0.8.0"

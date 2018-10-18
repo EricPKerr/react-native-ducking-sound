@@ -62,18 +62,12 @@ function Sound(filename, basePath, onError, options) {
   this._key = asset ? filename : djb2Code(filename); //if the file is an asset, use the asset number as the key
   this._playing = false;
   this._duration = -1;
-  this._numberOfChannels = -1;
   this._volume = 1;
-  this._pan = 0;
-  this._numberOfLoops = 0;
-  this._speed = 1;
+  
   RNSound.prepare(this._filename, this._key, options || {}, (error, props) => {
     if (props) {
       if (typeof props.duration === 'number') {
         this._duration = props.duration;
-      }
-      if (typeof props.numberOfChannels === 'number') {
-        this._numberOfChannels = props.numberOfChannels;
       }
     }
     if (error === null) {
@@ -143,10 +137,6 @@ Sound.prototype.getDuration = function() {
   return this._duration;
 };
 
-Sound.prototype.getNumberOfChannels = function() {
-  return this._numberOfChannels;
-};
-
 Sound.prototype.getVolume = function() {
   return this._volume;
 };
@@ -177,43 +167,6 @@ Sound.prototype.setSystemVolume = function(value) {
   return this;
 };
 
-Sound.prototype.getPan = function() {
-  return this._pan;
-};
-
-Sound.prototype.setPan = function(value) {
-  if (this._loaded) {
-    RNSound.setPan(this._key, this._pan = value);
-  }
-  return this;
-};
-
-Sound.prototype.getNumberOfLoops = function() {
-  return this._numberOfLoops;
-};
-
-Sound.prototype.setNumberOfLoops = function(value) {
-  this._numberOfLoops = value;
-  if (this._loaded) {
-    if (IsAndroid || IsWindows) {
-      RNSound.setLooping(this._key, !!value);
-    } else {
-      RNSound.setNumberOfLoops(this._key, value);
-    }
-  }
-  return this;
-};
-
-Sound.prototype.setSpeed = function(value) {
-  this._speed = value;
-  if (this._loaded) {
-    if (!IsWindows) {
-      RNSound.setSpeed(this._key, value);
-    }
-  }
-  return this;
-};
-
 Sound.prototype.getCurrentTime = function(callback) {
   if (this._loaded) {
     RNSound.getCurrentTime(this._key, callback);
@@ -238,10 +191,6 @@ Sound.prototype.setSpeakerphoneOn = function(value) {
 
 // This is deprecated.  Call the static one instead.
 
-Sound.prototype.setCategory = function(value) {
-  Sound.setCategory(value, false);
-}
-
 Sound.prototype.isPlaying = function() {
   return this._playing;
 }
@@ -250,27 +199,9 @@ Sound.enable = function(enabled) {
   RNSound.enable(enabled);
 };
 
-Sound.enableInSilenceMode = function(enabled) {
-  if (!IsAndroid && !IsWindows) {
-    RNSound.enableInSilenceMode(enabled);
-  }
-};
-
 Sound.setActive = function(value) {
   if (!IsAndroid && !IsWindows) {
     RNSound.setActive(value);
-  }
-};
-
-Sound.setCategory = function(value, mixWithOthers = false) {
-  if (!IsWindows) {
-    RNSound.setCategory(value, mixWithOthers);
-  }
-};
-
-Sound.setMode = function(value) {
-  if (!IsAndroid && !IsWindows) {
-    RNSound.setMode(value);
   }
 };
 
