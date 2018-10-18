@@ -1,6 +1,6 @@
 {
   "name": "react-native-ducking-sound",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Native module for playing sound clips of speech",
   "main": "sound.js",
   "typings": "index.d.ts",
@@ -18,5 +18,12 @@
   "license": "MIT",
   "peerDependencies": {
     "react-native": ">=0.8.0"
+  },
+  "bugs": {
+    "url": "https://github.com/EricPKerrr/react-native-ducking-sound/issues"
+  },
+  "homepage": "https://github.com/EricPKerrr/react-native-ducking-sound#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

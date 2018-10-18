@@ -1,4 +1,4 @@
-# react-native-ducking.sound
+# react-native-ducking-sound
 
 React Native module for playing spoken sound clips with ducking.
 
