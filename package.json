@@ -6,7 +6,7 @@
   "typings": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EricPKerrr/react-native-ducking-sound.git"
+    "url": "git+https://github.com/EricPKerr/react-native-ducking-sound.git"
   },
   "keywords": [
     "react-native",
@@ -20,9 +20,9 @@
     "react-native": ">=0.8.0"
   },
   "bugs": {
-    "url": "https://github.com/EricPKerrr/react-native-ducking-sound/issues"
+    "url": "https://github.com/EricPKerr/react-native-ducking-sound/issues"
   },
-  "homepage": "https://github.com/EricPKerrr/react-native-ducking-sound#readme",
+  "homepage": "https://github.com/EricPKerr/react-native-ducking-sound#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
